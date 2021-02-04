@@ -1,0 +1,14 @@
+{
+  "name": "kuvo-toolkit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stakagi/kuvo-toolkit.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "netlify-lambda build functions/",
+    "serve": "netlify-lambda serve functions/"
+  },
+  "dependencies": {
+    "netlify-lambda": "^2.0.3"
+  }
+}
