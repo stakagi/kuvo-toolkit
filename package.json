@@ -9,6 +9,8 @@
     "serve": "netlify-lambda serve functions/"
   },
   "dependencies": {
-    "netlify-lambda": "^2.0.3"
+    "chrome-aws-lambda": "^5.5.0",
+    "netlify-lambda": "^2.0.3",
+    "puppeteer-core": "^7.0.1"
   }
 }
