@@ -9,9 +9,9 @@
     "serve": "netlify-lambda serve functions/ --config ./webpack.functions.js"
   },
   "dependencies": {
-    "chrome-aws-lambda": "^2.0.1",
+    "chrome-aws-lambda": "^5.5.0",
     "encoding": "^0.1.13",
     "puppeteer": "^7.0.1",
-    "puppeteer-core": "^2.0.0"
+    "puppeteer-core": "^7.0.1"
   }
 }
