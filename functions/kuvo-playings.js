@@ -4,10 +4,13 @@ const puppeteer = require('puppeteer-core');
 exports.handler = async (event, context) => {
     console.log(event);
 
+    let browser;
     try {
-        const playlist = event.queryStringParameters.playlist;
+        const playlist = event.queryStringParameters['playlist'];
 
         const executablePath = await chromium.executablePath;
+        console.log(executablePath);
+
         browser = await puppeteer.launch({
             args: chromium.args,
             executablePath: executablePath,
@@ -29,16 +32,16 @@ exports.handler = async (event, context) => {
             })
         };
     } catch (err) {
-        console.log('error', error)
+        console.log('error', err)
         return {
             statusCode: 500,
             body: JSON.stringify({
-                error: error
+                error: err
             })
-        }
+        };
     } finally {
         // close browser
-        if (browser !== null) {
+        if (browser) {
             await browser.close()
         }
     }
