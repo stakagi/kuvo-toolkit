@@ -6,12 +6,12 @@
   "license": "MIT",
   "scripts": {
     "build": "netlify-lambda build functions/",
-    "serve": "netlify-lambda serve functions/"
+    "serve": "netlify-lambda serve functions/ --config ./webpack.functions.js"
   },
   "dependencies": {
-    "encoding": "^0.1.13",
-    "netlify-lambda": "^2.0.3",
     "chrome-aws-lambda": "^2.0.1",
+    "encoding": "^0.1.13",
+    "puppeteer": "^7.0.1",
     "puppeteer-core": "^2.0.0"
   }
 }
