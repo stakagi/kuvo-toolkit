@@ -1,5 +1,4 @@
-const chromium = require('chrome-aws-lambda');
-const puppeteer = require('puppeteer-core');
+const headless = require('./headless');
 
 exports.handler = async (event, context) => {
     console.log(event);
@@ -8,15 +7,7 @@ exports.handler = async (event, context) => {
     try {
         const playlist = event.queryStringParameters['playlist'];
 
-        const executablePath = await chromium.executablePath;
-        console.log(executablePath);
-
-        browser = await puppeteer.launch({
-            args: chromium.args,
-            executablePath: executablePath,
-            headless: chromium.headless,
-        });
-
+        browser = await headless.getBrowser();
         const page = await browser.newPage();
 
         await page.goto(`https://kuvo.com/playlist/${playlist}`);

@@ -5,13 +5,14 @@
   "repository": "https://github.com/stakagi/kuvo-toolkit.git",
   "license": "MIT",
   "scripts": {
-    "build": "netlify-lambda build functions/",
-    "serve": "netlify-lambda serve functions/ --config ./webpack.functions.js"
+    "serve": "netlify dev"
   },
   "dependencies": {
     "chrome-aws-lambda": "^5.5.0",
     "encoding": "^0.1.13",
-    "puppeteer": "^7.0.1",
     "puppeteer-core": "^7.0.1"
+  },
+  "devDependencies": {
+    "puppeteer": "^7.0.1"
   }
 }
